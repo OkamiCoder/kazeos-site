@@ -12,11 +12,16 @@ export default {
         accent: {
           DEFAULT: 'var(--color-accent)',
           hover: 'var(--color-accent-hover)',
+          glow: 'var(--color-accent-glow)',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"Fira Code"', 'monospace'],
+      },
+      boxShadow: {
+        hard: '4px 4px 0 0 var(--color-border)',
+        'hard-accent': '4px 4px 0 0 var(--color-accent-glow)',
       },
     },
   },

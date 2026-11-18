@@ -3,8 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="KazeOS — минималистичный Linux-дистрибутив. Официальный сайт проекта." />
-    <title>KazeOS</title>
+    <meta
+      name="description"
+      content="KazeOS — минималистичный Linux-дистрибутив на базе Arch Linux. Официальный сайт проекта."
+    />
+    <meta name="theme-color" content="#0a0a0c" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>KazeOS — минималистичный Linux-дистрибутив</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KazeOS" />
+    <meta property="og:title" content="KazeOS — минималистичный Linux-дистрибутив" />
+    <meta
+      property="og:description"
+      content="Дистрибутив на базе Arch Linux: тонкий слой автоматизации, контроль пользователя, минимализм. Официальный сайт."
+    />
+    <!-- TODO: заменить на реальный URL после первого деплоя -->
+    <meta property="og:url" content="https://okamicoder.github.io/kazeos-site/" />
+    <!-- TODO: добавить og:image 1200×630 (png/jpg) в src/assets/images/ и указать абсолютный URL -->
+    <!-- <meta property="og:image" content="https://okamicoder.github.io/kazeos-site/og-image.png" /> -->
+    <!-- <meta property="og:image:width" content="1200" /> -->
+    <!-- <meta property="og:image:height" content="630" /> -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="KazeOS — минималистичный Linux-дистрибутив" />
+    <meta
+      name="twitter:description"
+      content="Дистрибутив на базе Arch Linux: тонкий слой автоматизации, контроль пользователя, минимализм."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,17 +46,3 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
-<!-- kazeos-site/
-     ├── public/
-     │   └── images/              # лого, аватарка, скриншоты (пока пусто)
-     ├── src/
-     │   ├── components/          # все компоненты плоско: Navbar.vue, Footer.vue, ...
-     │   ├── App.vue
-     │   ├── main.js
-     │   └── style.css            # токены + базовые стили + утилиты
-     ├── index.html
-     ├── package.json
-     ├── postcss.config.js
-     ├── tailwind.config.js
-     └── vite.config.js -->

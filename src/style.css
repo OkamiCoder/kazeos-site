@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Палитра (менять здесь) ---- */
 :root {
+  color-scheme: dark; /* нативные контролы в тёмной теме */
   --color-background: #0a0a0c;
   --color-surface: #121216;
   --color-border: #2a2a32;
@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* чтобы якоря не уезжали под sticky Navbar */
 }
 
 body {
@@ -27,28 +28,29 @@ body {
   color: var(--color-background);
 }
 
-/* Видимый фокус для всего интерактивного */
+/* Фокус для всех интерактивных элементов */
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* ---- Пиксельные утилиты ---- */
 .pixelated {
   image-rendering: pixelated;
 }
 
-/* Жёсткая смещённая тень без размытия */
 .shadow-hard {
-  box-shadow: 4px 4px 0 0 var(--color-border);
+  box-shadow: var(--shadow-hard, 4px 4px 0 0 var(--color-border));
 }
 
 .shadow-hard-accent {
   box-shadow: 4px 4px 0 0 var(--color-accent-glow);
 }
 
-/* Уважаем prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -58,5 +60,46 @@ button:focus-visible {
   }
   html {
     scroll-behavior: auto;
+  }
+}
+/* ---- Анимация появления секций ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 400ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* ---- Тёмный скроллбар ---- */
+@media (min-width: 768px) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) var(--color-background);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border: 2px solid var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
   }
 }
