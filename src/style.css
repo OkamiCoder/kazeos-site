@@ -28,7 +28,6 @@ body {
   color: var(--color-background);
 }
 
-/* Фокус для всех интерактивных элементов */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -62,7 +61,7 @@ textarea:focus-visible,
     scroll-behavior: auto;
   }
 }
-/* ---- Анимация появления секций ---- */
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -78,7 +77,6 @@ textarea:focus-visible,
   will-change: auto;
 }
 
-/* ---- Тёмный скроллбар ---- */
 @media (min-width: 768px) {
   * {
     scrollbar-width: thin;
