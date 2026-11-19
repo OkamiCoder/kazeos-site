@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark; /* нативные контролы в тёмной теме */
+  color-scheme: dark; 
   --color-background: #0a0a0c;
   --color-surface: #121216;
   --color-border: #2a2a32;
@@ -16,7 +16,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* чтобы якоря не уезжали под sticky Navbar */
+  scroll-padding-top: 5rem; 
 }
 
 body {
