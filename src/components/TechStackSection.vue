@@ -62,33 +62,27 @@ const stack = [
                 shape-rendering="crispEdges"
                 aria-hidden="true"
               >
-                <!-- Arch: треугольник -->
                 <path v-if="item.role === 'База'" d="M12 3 L21 21 H3 Z" />
-                <!-- Installer: стрелка в диск -->
                 <g v-else-if="item.role === 'Установщик'">
                   <rect x="3" y="15" width="18" height="6" />
                   <path d="M12 3 V15 M8 11 L12 15 L16 11" />
                 </g>
-                <!-- ISO: слои диска -->
                 <g v-else-if="item.role === 'Сборка ISO'">
                   <path d="M3 7 L12 3 L21 7 L12 11 Z" />
                   <path d="M3 12 L12 16 L21 12" />
                   <path d="M3 17 L12 21 L21 17" />
                 </g>
-                <!-- WM: сетка 2x2 -->
                 <g v-else-if="item.role === 'WM по умолчанию'">
                   <rect x="3" y="3" width="8" height="8" />
                   <rect x="13" y="3" width="8" height="8" />
                   <rect x="3" y="13" width="8" height="8" />
                   <rect x="13" y="13" width="8" height="8" />
                 </g>
-                <!-- Альтернативы: сетка 3 зоны -->
                 <g v-else-if="item.role === 'Альтернативы'">
                   <rect x="3" y="3" width="8" height="18" />
                   <rect x="13" y="3" width="8" height="8" />
                   <rect x="13" y="13" width="8" height="8" />
                 </g>
-                <!-- Автоматизация: терминал -->
                 <g v-else>
                   <rect x="2" y="4" width="20" height="16" />
                   <path d="M6 9 L10 12 L6 15" />
