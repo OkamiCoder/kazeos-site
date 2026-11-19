@@ -1,4 +1,3 @@
-// Единый IntersectionObserver на всё приложение — дешевле, чем по одному на элемент.
 let observer = null
 
 function getObserver() {
@@ -14,8 +13,6 @@ function getObserver() {
       }
     },
     {
-      // Срабатывает чуть раньше, чем элемент полностью войдёт — анимация начинается
-      // до того, как пользователь упрётся в блок.
       rootMargin: '0px 0px -10% 0px',
       threshold: 0.1
     }
@@ -26,7 +23,6 @@ function getObserver() {
 
 export const reveal = {
   mounted(el) {
-    // Если пользователь просит уменьшить движение — показываем сразу, без анимации.
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced || typeof IntersectionObserver === 'undefined') {
       el.classList.add('reveal', 'is-visible')
